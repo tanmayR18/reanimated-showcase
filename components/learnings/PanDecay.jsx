@@ -7,7 +7,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withDecay, withSpring } fro
 const SIZE = 120;
 const BOUNDARY_OFFSET = 20;
 
-const Practise = () => {
+const PanDecay = () => {
     
     const pressedValue = useSharedValue(false)
     const offsetX = useSharedValue(0);
@@ -95,5 +95,5 @@ const Practise = () => {
   );
 };
 
-export default Practise;
+export default PanDecay;
 

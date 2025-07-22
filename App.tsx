@@ -8,14 +8,14 @@ import { StyleSheet,View } from 'react-native';
 import Practise from './components/common/Practise';
 import "./global.css"
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import Interpolate from './components/learnings/Interpolate';
+import PanDecay from './components/learnings/PanDecay';
 
 function App() {
   return (
     <GestureHandlerRootView className=' flex-1'>
         <View className=' bg-white flex-1'>
             {/* <Practise /> */}
-            <Interpolate/>
+            <PanDecay/>
         </View>
     </GestureHandlerRootView>
   );
