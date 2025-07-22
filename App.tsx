@@ -4,18 +4,20 @@
  *
  * @format
  */
-
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { StyleSheet,View } from 'react-native';
+import Practise from './components/common/Practise';
+import "./global.css"
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Interpolate from './components/learnings/Interpolate';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <GestureHandlerRootView className=' flex-1'>
+        <View className=' bg-white flex-1'>
+            {/* <Practise /> */}
+            <Interpolate/>
+        </View>
+    </GestureHandlerRootView>
   );
 }
 
