@@ -1,3 +1,4 @@
+// https://www.youtube.com/watch?v=ddye_L0Azm8&list=PLlydFsFRbxJ014OZDMcn_kdjH6rglaWfB&index=2
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import Animated, { interpolate, interpolateColor, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
