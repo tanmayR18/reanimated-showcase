@@ -1,4 +1,4 @@
-package com.reanimated
+package com.reanimated.showcase
 
 import android.app.Application
 import com.facebook.react.PackageList

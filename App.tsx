@@ -1,15 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
 import { View } from 'react-native';
 import './global.css';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Practise from './src/components/common/Practise';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
 function App() {
   return (
     <SafeAreaProvider>
