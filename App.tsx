@@ -5,6 +5,7 @@ import Practise from './src/components/common/Practise';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useEffect } from 'react';
 import BootSplash from "react-native-bootsplash";
+import AppNavigator from './src/navigation/AppNavigator';
 
 function App() {
   useEffect(() => {
@@ -20,9 +21,7 @@ function App() {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView className=" flex-1">
-        <View className=" flex-1 bg-white">
-          <Practise />
-        </View>
+       <AppNavigator />
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
