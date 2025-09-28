@@ -7,6 +7,7 @@ import ContributorsScreen from '../screens/Contributor/ContributorsScreen';
 import SettingsScreen from '../screens/Setting/SettingsScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import BootSplash from 'react-native-bootsplash';
 
 // ---------- Types ------------
 export type RootStackParamList = {
@@ -63,7 +64,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const AppNavigator = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer onReady={() => BootSplash.hide({ fade: true })}>
       <RootStack.Navigator>
         <RootStack.Screen
           name="MainTabs"
