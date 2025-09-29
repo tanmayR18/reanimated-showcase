@@ -4,6 +4,13 @@ import React from 'react'
 type Props = {}
 
 const CategoriesScreen = (props: Props) => {
+
+    const catgories = [
+        {
+            name: ''
+        }
+    ]
+
   return (
     <View>
       <Text>CategoriesScreen</Text>

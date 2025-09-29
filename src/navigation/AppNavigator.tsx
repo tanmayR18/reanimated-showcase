@@ -32,7 +32,11 @@ export type RootTabParamList = {
 const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 function HomeStackNavigator() {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <HomeStack.Screen name="Categories" component={CategoriesScreen} />
       <HomeStack.Screen
         name="AnimationsList"
