@@ -6,8 +6,12 @@ import DemoScreen from '../screens/Category/DemoScreen';
 import ContributorsScreen from '../screens/Contributor/ContributorsScreen';
 import SettingsScreen from '../screens/Setting/SettingsScreen';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {
+  createBottomTabNavigator,
+  BottomTabBarProps,
+} from '@react-navigation/bottom-tabs';
 import BootSplash from 'react-native-bootsplash';
+import { CustomHomeTabBar } from './HomeTabBar';
 
 // ---------- Types ------------
 export type RootStackParamList = {
@@ -48,10 +52,14 @@ function HomeStackNavigator() {
 }
 
 // ----------- Tabs -----------
+
+const HomeTab = (props: BottomTabBarProps) => <CustomHomeTabBar {...props} />;
+
 const Tab = createBottomTabNavigator<RootTabParamList>();
 function TabsNavigator() {
   return (
     <Tab.Navigator
+      tabBar={HomeTab}
       screenOptions={({}) => ({
         headerShown: false,
       })}
