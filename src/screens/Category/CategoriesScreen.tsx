@@ -1,6 +1,7 @@
 import { View, Text, Dimensions, StyleSheet } from 'react-native';
 import React from 'react';
 import { categories } from '../../data/categories';
+import { LightTheme } from '../../theme/theme';
 
 const { height, width } = Dimensions.get('window');
 
@@ -8,7 +9,10 @@ const CategoriesScreen = () => {
   return (
     <View style={styles.container}>
       {categories?.map(category => (
-        <View style={[styles.category, { backgroundColor: category.color}]} key={category.id}>
+        <View
+          style={[styles.category, { backgroundColor: category.color }]}
+          key={category.id}
+        >
           <Text style={styles.title}>{category.title}</Text>
         </View>
       ))}
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
     gap: 8,
     justifyContent: 'center',
     alignContent: 'center',
-    backgroundColor: '#BDBDBD'
+    backgroundColor: LightTheme.colors.background,
   },
   category: {
     width: width * 0.5 - 16 - 4,
@@ -37,8 +41,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    textAlign:'center',
-    color: '#555555'
+    textAlign: 'center',
+    color: LightTheme.colors.textPrimary,
   },
 });
 
