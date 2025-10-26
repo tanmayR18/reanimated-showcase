@@ -6,7 +6,12 @@ import DemoScreen from '../screens/Category/DemoScreen';
 import ContributorsScreen from '../screens/Contributor/ContributorsScreen';
 import SettingsScreen from '../screens/Setting/SettingsScreen';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {
+  createBottomTabNavigator,
+  BottomTabBarProps,
+} from '@react-navigation/bottom-tabs';
+import BootSplash from 'react-native-bootsplash';
+import { CustomHomeTabBar } from './HomeTabBar';
 
 // ---------- Types ------------
 export type RootStackParamList = {
@@ -31,7 +36,11 @@ export type RootTabParamList = {
 const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 function HomeStackNavigator() {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <HomeStack.Screen name="Categories" component={CategoriesScreen} />
       <HomeStack.Screen
         name="AnimationsList"
@@ -43,10 +52,14 @@ function HomeStackNavigator() {
 }
 
 // ----------- Tabs -----------
+
+const HomeTab = (props: BottomTabBarProps) => <CustomHomeTabBar {...props} />;
+
 const Tab = createBottomTabNavigator<RootTabParamList>();
 function TabsNavigator() {
   return (
     <Tab.Navigator
+      tabBar={HomeTab}
       screenOptions={({}) => ({
         headerShown: false,
       })}
@@ -63,7 +76,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const AppNavigator = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer onReady={() => BootSplash.hide({ fade: true })}>
       <RootStack.Navigator>
         <RootStack.Screen
           name="MainTabs"
