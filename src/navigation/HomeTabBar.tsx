@@ -58,6 +58,7 @@ export function CustomHomeTabBar({
             onPress={onPress}
             onLongPress={onLongPress}
             style={styles.tab}
+            key={route.key}
           >
             {Icon}
           </PlatformPressable>
